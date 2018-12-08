@@ -19,12 +19,6 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <style media="screen">
-       .banner1{
-         width : 100%;
-         height : 380px;
-        }
-    </style>
   </head>
   <body>
 
@@ -39,23 +33,41 @@
 
             <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
               <div class="site-logo">
-                <a href="/spokatmania" class="js-logo-clone">Doctor Spokat</a>
+                <a href="index.html" class="js-logo-clone">Doctor Spokat</a>
 
               </div>
             </div>
 
             <div class="col-6 col-md-4 order-3 order-md-3 text-right">
               <div class="site-top-icons">
-                <ul>
-                  <li><a href="/signin"><span class="icon icon-person"></span>SIGN IN</a></li>
+                 @if(Session::has('login'))
+                 <ul>
+                {{Session::get('login')}}
                   <li>
-                    <a href="/carts" class="site-cart">
+                    <a href="cart.html" class="site-cart">
                       <span class="icon icon-shopping_cart"></span>CART
                       <span class="count">2</span>
                     </a>
                   </li>
                   <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
                 </ul>
+                 
+                 @else 
+                 <ul>
+                  <li><a href="/signup"><span class="icon icon-person"></span>SIGN UP</a></li>
+                  <li><a href="/signin"><span class="icon icon-person"></span>SIGN IN</a></li>
+                  <li>
+                    <a href="cart.html" class="site-cart">
+                      <span class="icon icon-shopping_cart"></span>CART
+                      <span class="count">2</span>
+                    </a>
+                  </li>
+                  <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
+                </ul>
+
+                    
+                
+                 @endif
               </div>
             </div>
 
@@ -66,25 +78,14 @@
         <div class="container">
           <ul class="site-menu js-clone-nav d-none d-md-block">
             <li><a href="/spokatmania">HOME</a></li>
-            <li><a href="/products">PRODUCT</a></li>
-            <li><a href="/treatments">Treatments</a></li>
-            <li><a href="/abouts">About</a></li>
+            <li><a href="/produc">PRODUCT</a></li>
+            <li><a href="/treatment.html">Treatments</a></li>
+            <li><a href="/about.html">About</a></li>
           </ul>
         </div>
       </nav>
     </header>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-6">
-          <a href="/products"><img src="images/3.jpg" alt="" class="banner1"></a>
-          <a href="/products"><div class="d-flex justify-content-center">PRODUCTS</a></div>
-        </div>
-        <div class="col-6">
-          <a href="/treatments"><img src="images/6.jpg" alt="" class="banner1"></a>
-          <a href="/treatments"><div class="d-flex justify-content-center">TREATMENTS</a></div>
-        </div>
-      </div>
-    </div>
+
     <div class="site-blocks-cover" style="background-image: url(images/hero_1.jpg);" data-aos="fade">
       <div class="container">
         <div class="row align-items-start align-items-md-center justify-content-end">

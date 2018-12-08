@@ -17,12 +17,13 @@ Route::get('/', function () {
 });
 Route::get('/spokatmania', function () {
     return view('index');
+
 });
 Route::get('/signup','register@index');
 Route::post('/signup','register@daftar');
 Route::get('/signin','login@index');
-Route::post('/carts','cart@index');
+Route::post('/signin','login@store');
+Route::get('/carts','cart@index');
 Route::get('/contacts','contact@index');
-Route::get('/treatments','treatment@index');
 Route::get('/products','product@index');
 Route::get('/abouts','about@index');
